@@ -24,8 +24,8 @@ const db = mongoose.connection;
 app.use(bodyParser.json());
 
 // handler to save user
-app.get('/save', function(res, req) {
-  const user = new User(user);
+app.get('/save', function(req, res) {
+  const user = new User(req.body);
 
   user.save(function(err) {
     if (err) {
